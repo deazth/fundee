@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateComDirectorsTable extends Migration
+class CreateComPersonnelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateComDirectorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('com_directors', function (Blueprint $table) {
+        Schema::create('com_personnels', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
             $table->integer('com_reg_id');
@@ -21,6 +21,7 @@ class CreateComDirectorsTable extends Migration
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('gender', 1);
+            $table->string('role');
             $table->date('date_of_birth');
             $table->string('social_security_no');
             $table->string('citizenship_country');
@@ -29,6 +30,7 @@ class CreateComDirectorsTable extends Migration
             $table->date('issue_date')->nullable();
             $table->date('expiry_date')->nullable();
             $table->string('issuing_auth')->nullable();
+            $table->string('remark')->nullable();
         });
     }
 
@@ -39,6 +41,6 @@ class CreateComDirectorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('com_directors');
+        Schema::dropIfExists('com_personnels');
     }
 }

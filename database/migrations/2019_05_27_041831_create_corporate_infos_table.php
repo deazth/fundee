@@ -16,6 +16,13 @@ class CreateCorporateInfosTable extends Migration
         Schema::create('corporate_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('com_reg_no');
+            $table->string('name');
+            $table->date('inc_date');
+            $table->string('city');
+            $table->string('state');
+            $table->string('country');
+
         });
     }
 

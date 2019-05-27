@@ -16,6 +16,11 @@ class CreateRwasTable extends Migration
         Schema::create('rwas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->integer('com_reg_id');
+            $table->integer('spv_id');
+            $table->string('project');
+            $table->string('sector');
+            $table->string('gdv');
         });
     }
 
